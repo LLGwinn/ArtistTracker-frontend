@@ -1,0 +1,23 @@
+node_modules/
+
+# dependencies
+artist_tracker/node_modules
+artist_tracker/.pnp
+artist_tracker/.pnp.js
+
+# testing
+artist_tracker/coverage
+
+# production
+artist_tracker/build
+
+# misc
+artist_tracker/.DS_Store
+artist_tracker/.env.local
+artist_tracker/.env.development.local
+artist_tracker/.env.test.local
+artist_tracker/.env.production.local
+
+artist_tracker/npm-debug.log*
+artist_tracker/yarn-debug.log*
+artist_tracker/yarn-error.log*
