@@ -33,7 +33,7 @@ function SavedEvents() {
         <div>
             <p className="display-6 mt-4 mb-5">Your Saved Events</p>
             {(userEvents.length)
-                ? <table className='table text-light'>
+                ? <table className='table table-sm text-light'>
                     <thead>
                         <tr className="text-dark">
                             <th>Artist</th>

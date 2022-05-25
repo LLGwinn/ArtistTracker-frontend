@@ -218,10 +218,11 @@ function Profile( {removeArtist, logout} ) {
             </div> 
             {/* ^ end content row */}
             <div className="row">
-                <Button variant="dark" href="/" className="Profile-homeBtn col-3 my-auto">Back to my homepage</Button>
+                <Button variant="dark" href="/" 
+                        className="col-sm-3 m-auto">Back to my homepage</Button>
                 <Button variant="outline-dark" 
                         size="sm" 
-                        className='col-1 ms-auto'
+                        className='col-sm-2 my-2 mx-auto'
                         onClick={deleteAccount}>Delete My Account</Button>
             </div>
         </div>

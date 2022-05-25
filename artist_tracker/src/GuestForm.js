@@ -80,6 +80,7 @@ function GuestForm() {
         if (selectedArtist.name !== "" && 
             selectedCity.id !== "" && 
             radius) setSubmitted(true);
+        else alert('Please enter an artist and city from the dropdown menu. (If no dropdown appears, try entering a space after your word.)')
     }
 
     return (

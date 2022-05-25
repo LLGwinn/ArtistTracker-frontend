@@ -12,4 +12,9 @@
     color: black;
 }
 
+.EventList-card {
+    width: 100%;
+    overflow-x: scroll;
+}
+
 

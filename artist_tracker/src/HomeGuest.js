@@ -10,10 +10,10 @@ function HomeGuest() {
                 <h1>Your Artist Tracker!</h1>
             </div>
             <div className="row mb-3 py-4 align-items-center">
-                <div className="Homeguest-box  col-9 ">
+                <div className="col-md-8">
                     <GuestForm />
                 </div>
-                <div className="col-3 p-4">
+                <div className="col-6 col-md-4 mx-auto p-4">
                     <div className="Home-right row mb-3 justify-content-center">
                         <p>Already have an account?</p>
                         <Button className="col-6" variant="dark" href="/login">Log In</Button>

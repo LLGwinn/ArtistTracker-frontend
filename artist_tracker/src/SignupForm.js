@@ -65,7 +65,8 @@ function SignupForm( {signup} ) {
                 city:selectedCity.id,
                 radius: +formData.radius
             }
-        signup(newUser);
+        if (selectedCity.id !== "" && formData.radius) signup(newUser);
+        else alert('Please enter a city from the dropdown menu. (If no dropdown appears, try entering a space after your word.)')
     }
 
     return (
@@ -78,8 +79,8 @@ function SignupForm( {signup} ) {
                 <div className="col-6 mx-auto">
                     <Form className="SignupForm" onSubmit={handleSubmit} autoComplete='off'>
                         <Form.Group as={Row} className="mb-3 justify-content-center" controlId="username">
-                            <Form.Label column sm={2}>Username</Form.Label>
-                            <Col sm={4}>
+                            <Form.Label column md={4}>Username</Form.Label>
+                            <Col lg={6}>
                                 <Form.Control type="text"
                                             name="username"
                                             value={formData.username}
@@ -88,8 +89,8 @@ function SignupForm( {signup} ) {
                              </Col>
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3 justify-content-center" controlId="password">
-                            <Form.Label column sm={2}>Password</Form.Label>
-                            <Col sm={4}>
+                            <Form.Label column md={4}>Password</Form.Label>
+                            <Col lg={6}>
                                 <Form.Control type="password"
                                             name="password" 
                                             value={formData.password}
@@ -98,8 +99,8 @@ function SignupForm( {signup} ) {
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3 justify-content-center" controlId="firstName">
-                            <Form.Label column sm={2}>First Name</Form.Label>
-                            <Col sm={4}>
+                            <Form.Label column md={4}>First Name</Form.Label>
+                            <Col lg={6}>
                                 <Form.Control type="text"
                                             name="firstName" 
                                             value={formData.firstName}
@@ -108,8 +109,8 @@ function SignupForm( {signup} ) {
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3 justify-content-center" controlId="formEmail">
-                            <Form.Label column sm={2}>Email</Form.Label>
-                            <Col sm={4}>
+                            <Form.Label column md={4}>Email</Form.Label>
+                            <Col lg={6}>
                                 <Form.Control type="email"
                                             name="email" 
                                             value={formData.email}
@@ -118,8 +119,8 @@ function SignupForm( {signup} ) {
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3 justify-content-center">
-                            <Form.Label column sm={2}>City:</Form.Label>
-                            <Col sm={4}>
+                            <Form.Label column md={4}>City:</Form.Label>
+                            <Col lg={6}>
                                 <Form.Control id='citySearch' 
                                             type='text' 
                                             name='selectedCity' 
@@ -144,8 +145,8 @@ function SignupForm( {signup} ) {
                             </Col>
                         </Form.Group>
                         <Form.Group as={Row} className="mb-3 justify-content-center" controlId="formDistance">
-                            <Form.Label column sm={4}>Preferred search distance (miles)</Form.Label>
-                            <Col sm={2}>
+                            <Form.Label column md={6}>Preferred search distance (miles)</Form.Label>
+                            <Col md={3}>
                                 <Form.Control type="number"
                                             name="radius" 
                                             value={formData.radius}
@@ -154,7 +155,7 @@ function SignupForm( {signup} ) {
                             </Col>
                         </Form.Group>
                         <div className='row justify-content-center'>
-                            <Button className="col col-2" type="submit" variant="dark">Submit</Button>
+                            <Button className="col-md-3" type="submit" variant="dark">Submit</Button>
                         </div>
                     </Form>
                 </div>

@@ -42,7 +42,7 @@ function HomeUser( {logout} ) {
                 <p className="display-5">Hi there, {currUser.firstName}!</p>
             </div>
             <div className="row py-3">
-                <div className="col-10 ">
+                <div className="col-md-9 ">
                     <p className="h3 pb-1 mb-2">Upcoming shows from your favorite artists:</p>
                     <div className='Home-eventList'>
                     {(usersSavedArtists.length)
@@ -54,7 +54,7 @@ function HomeUser( {logout} ) {
                     }
                     </div>
                 </div>
-                <div className="col-2 p-2 align-items-center">
+                <div className="col-md-3 p-2 align-items-center">
                     <div className="row mb-3">
                         <Button variant="dark" 
                                 className="col-10 mt-5 mx-auto"

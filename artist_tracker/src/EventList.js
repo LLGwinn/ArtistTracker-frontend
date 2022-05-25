@@ -44,8 +44,8 @@ function EventList( {artistDetails, cityInfo, radius} ) {
     if(!events) return <div className="spinner-border text-primary mt-3" role="status"></div>
 
     return(
-        <div className="EventList container">
-            <div className="card mb-3">
+        <div className="EventList">
+            <div className="EventList-card card mb-3 col col-xs-9">
                 <div className="card-body">
                     <img className="img-fluid" src={artistDetails.image} alt="artist" />
                     <h5 className="card-title text-dark h1">
