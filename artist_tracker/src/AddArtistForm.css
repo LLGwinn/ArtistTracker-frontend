@@ -5,13 +5,14 @@
   }
 
 .AddArtist-autocompleteContainer {
+    position: absolute;
+    left: 32%;
     text-align: left;
     font-size: smaller;
     font-style: italic;
     background-color: lightgray;
     color: black;
-    width: 40%;
-    margin:auto;
+    width: 20%;
     cursor: pointer;
     border-radius: 2px;
 }

@@ -128,18 +128,24 @@ function SignupForm( {signup} ) {
                                             onChange={citySearchChange} 
                                             value={citySearch} 
                                             className='citySearch'
+                                            placeholder="click this field to search cities"
                                             required />
                                 {cityOptionsDisplay && (
-                                    <div className='autocompleteContainer ps-3 mt-1'>
-                                        {autocompleteCities.map(city => {
+                                    <div className='SignupForm-autocompleteContainer ps-3 mt-1'>
+                                        {autocompleteCities.length
+                                        ?
+                                        autocompleteCities.map(city => {
                                             return (
                                                 <div className='autocompleteOption' 
-                                                    key={city.id} 
-                                                    onClick={() => setCitySelection(city)}>
-                                                    <span>{city.name}, {city.region}</span>
+                                                     key={city.id} 
+                                                     onClick={() => setCitySelection(city)}>
+                                                     <span>{city.name}, {city.region}</span>
                                                 </div>
                                             )
-                                        })}
+                                        })
+                                        :
+                                        <p>Loading...</p>
+                                        }
                                     </div>
                                 )}
                             </Col>

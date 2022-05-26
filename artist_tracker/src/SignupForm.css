@@ -4,3 +4,21 @@
     align-items: center;
     padding: 10px;
 }
+
+.SignupForm-autocompleteContainer {
+    position: absolute;
+    left: 48%;
+    text-align: left;
+    font-size: smaller;
+    font-style: italic;
+    background-color: lightgray;
+    color: black;
+    width: 20%;
+    cursor: pointer;
+    border-radius: 2px;
+  }
+
+  ::placeholder {
+      font-size: smaller;
+      font-style: italic;
+  }

@@ -12,14 +12,16 @@
 }
 
 .autocompleteContainer {
+    position: absolute;
+    left: 20%;
     text-align: left;
     font-size: smaller;
-    background-color: lightgrey;
+    font-style: italic;
+    background-color: lightgray;
     color: black;
-    width: 90%;
-    margin:auto;
-    border-radius: 2px;
+    width: 20%;
     cursor: pointer;
+    border-radius: 2px;
 }
 
 .Profile-artists {

@@ -4,6 +4,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import ArtistTrackerApi from './api';
 import userContext from './userContext';
+import UnauthorizedMessage from "./UnauthorizedMessage";
 import './AddArtistForm.css'
 
 const _ = require('lodash');
@@ -15,7 +16,7 @@ function AddArtistForm( {add} ) {
     const [selectedArtist, setSelectedArtist] = useState({name:""});
     const [artistOptionsDisplay, setArtistOptionsDisplay] = useState(false);
 
-    const {currUser} = useContext(userContext);
+    const {currUser, token} = useContext(userContext);
     const navigate = useNavigate();
 
     const debounceLoadArtists = useCallback(
@@ -42,8 +43,8 @@ function AddArtistForm( {add} ) {
 
     const artistSearchChange = evt => {
         setArtistSearch(evt.target.value);
-        if(artistSearch && artistSearch.length >= 3){
-            debounceLoadArtists(artistSearch);
+        if(artistSearch && artistSearch.length >= 2){
+            debounceLoadArtists(evt.target.value);
         }
     }
 
@@ -52,6 +53,8 @@ function AddArtistForm( {add} ) {
         setSelectedArtist(artistSelection);
         setArtistOptionsDisplay(false);
     }
+
+    if (!token) return <UnauthorizedMessage />;
 
     return (
         <div className='AddArtistForm container-fluid'>
@@ -71,7 +74,9 @@ function AddArtistForm( {add} ) {
                                   className='artistSearch mb-3' />
                     {artistOptionsDisplay && (
                         <div className='AddArtist-autocompleteContainer ps-3 mt-1'>
-                            {autocompleteArtists.map(artist => {
+                            {autocompleteArtists.length
+                            ?
+                            autocompleteArtists.map(artist => {
                                 return (
                                     <div className='autocompleteOption' 
                                         key={artist.id} 
@@ -79,8 +84,10 @@ function AddArtistForm( {add} ) {
                                         <span>{artist.name}</span>
                                     </div>
                                 )
-                            })}
-
+                            })
+                            :
+                            <p>Loading...</p>
+                            }
                         </div>
                     )}
                 </Form.Group>

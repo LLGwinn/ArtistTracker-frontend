@@ -23,7 +23,7 @@ function GuestForm() {
 
     const debounceLoadCities = useCallback(
                                 debounce(str => fetchCities(str), 1200), []);
-
+       
     const debounceLoadArtists = useCallback(
         debounce(str => fetchArtists(str), 750), []);
 
@@ -47,15 +47,15 @@ function GuestForm() {
 
     const artistSearchChange = evt => {
         setArtistSearch(evt.target.value);
-        if(artistSearch && artistSearch.length >= 3){
-            debounceLoadArtists(artistSearch);
+        if(artistSearch && artistSearch.length >= 2){
+            debounceLoadArtists(evt.target.value);
         }
     }
 
     const citySearchChange = evt => {
         setCitySearch(evt.target.value);
         if(citySearch && citySearch.length >= 3){
-            debounceLoadCities(citySearch);
+            debounceLoadCities(evt.target.value);
         }
     }
 
@@ -99,20 +99,24 @@ function GuestForm() {
                                 value={artistSearch} 
                                 className='artistSearch'
                                 required />
-                    {artistOptionsDisplay && (
-                        <div className='GuestForm-autocompleteContainer ps-3 mt-1'>
-                            {autocompleteArtists.map(artist => {
-                                return (
-                                    <div className='autocompleteOption' 
-                                        key={artist.id} 
-                                        onClick={() => setArtistSelection(artist)}>
-                                        <span>{artist.name}</span>
-                                    </div>
-                                )
-                            })}
-
-                        </div>
-                    )}
+                        {artistOptionsDisplay && (
+                            <div className='GuestForm-autocompleteContainer ps-3 mt-1'>
+                                {autocompleteArtists.length
+                                ?
+                                autocompleteArtists.map(artist => {
+                                    return (
+                                        <div className='autocompleteOption' 
+                                            key={artist.id} 
+                                            onClick={() => setArtistSelection(artist)}>
+                                            <span>{artist.name}</span>
+                                        </div>
+                                    )
+                                })
+                                :
+                                <p>Loading...</p>
+                                }
+                            </div>                       
+                        )}
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label>Enter a city:</Form.Label>
@@ -127,7 +131,9 @@ function GuestForm() {
                                   required />
                     {cityOptionsDisplay && (
                         <div className='GuestForm-autocompleteContainer ps-3 mt-1'>
-                            {autocompleteCities.map(city => {
+                            {autocompleteCities.length
+                            ?
+                            autocompleteCities.map(city => {
                                 return (
                                     <div className='autocompleteOption' 
                                         key={city.id} 
@@ -135,8 +141,10 @@ function GuestForm() {
                                         <span>{city.name}, {city.region}</span>
                                     </div>
                                 )
-                            })}
-
+                            })
+                            :
+                            <p>Loading...</p>
+                            }
                         </div>
                     )}
                 </Form.Group>

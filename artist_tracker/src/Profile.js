@@ -15,7 +15,7 @@ const {debounce} = _;
 
 function Profile( {removeArtist, logout} ) {  
     const {id} = useParams();
-    const {currUser, setCurrUser, token, usersSavedArtists, setUsersSavedArtists} = useContext(userContext);
+    const {currUser, setCurrUser, token, usersSavedArtists} = useContext(userContext);
     const [formData, setFormData] = useState(
                 {username: currUser.username, firstName: currUser.firstName, 
                 email: currUser.email, city: currUser.city, 
@@ -45,7 +45,7 @@ function Profile( {removeArtist, logout} ) {
     const citySearchChange = evt => {
         setCitySearch(evt.target.value);
         if(citySearch && citySearch.length >= 3){
-            debounceLoadCities(citySearch);
+            debounceLoadCities(evt.target.value);
         }
     }
 
@@ -170,16 +170,21 @@ function Profile( {removeArtist, logout} ) {
                                             value={citySearch}
                                             className='citySearch'/>
                                 {cityOptionsDisplay && (
-                                    <div className='autocompleteContainer ps-3 mt-1'>
-                                        {autocompleteCities.map(city => {
+                                    <div className='GuestForm-autocompleteContainer ps-3 mt-1'>
+                                        {autocompleteCities.length
+                                        ?
+                                        autocompleteCities.map(city => {
                                             return (
                                                 <div className='autocompleteOption' 
-                                                    key={city.id} 
-                                                    onClick={() => setCitySelection(city)}>
-                                                    <span>{city.name}, {city.region}</span>
+                                                     key={city.id} 
+                                                     onClick={() => setCitySelection(city)}>
+                                                     <span>{city.name}, {city.region}</span>
                                                 </div>
                                             )
-                                        })}
+                                        })
+                                        :
+                                        <p>Loading...</p>
+                                        }
                                     </div>
                                 )}
                             </Col>

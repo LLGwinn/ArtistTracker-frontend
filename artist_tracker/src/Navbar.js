@@ -20,7 +20,7 @@ function NavbarComp( {logout} ) {
                     <Nav className="mr-auto">
                         <Nav.Link href="/">Home&nbsp;&nbsp;&nbsp;|</Nav.Link>
                         {currUser 
-                            ? <Nav.Link href={`profile/${currUser.id}`}>{currUser.username}&nbsp;&nbsp;&nbsp;|</Nav.Link>
+                            ? <Nav.Link href={`/profile/${currUser.id}`}>{currUser.username}&nbsp;&nbsp;&nbsp;|</Nav.Link>
                             : <Nav.Link href='/login'>Log In&nbsp;&nbsp;&nbsp;|</Nav.Link>
                         }
                         {currUser 
