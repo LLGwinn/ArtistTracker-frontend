@@ -2,8 +2,8 @@
 
 Click this link to starting experimenting with [Artist Tracker](https://my-artisttracker.surge.sh)!
 
-![Landing Page](/static/screenshot-landing.jpg)
-![User Homepage](static/screenshot-userhome.jpg)
+![Landing Page](../../ArtistTracker-backend/static/screenshot-landing.jpg)
+![User Homepage](../../ArtistTracker-backend/static/screenshot-userhome.jpg)
 
 The Artist Tracker app helps a user keep track of upcoming performances from their favorite artists in their area.
 
