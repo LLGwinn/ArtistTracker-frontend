@@ -100,7 +100,7 @@ function GuestForm() {
                                 className='artistSearch'
                                 required />
                         {artistOptionsDisplay && (
-                            <div className='GuestForm-autocompleteContainer ps-3 mt-1'>
+                            <div className='GuestForm-autocompleteContainer px-2 mt-1'>
                                 {autocompleteArtists.length
                                 ?
                                 autocompleteArtists.map(artist => {

@@ -57,25 +57,25 @@ function HomeUser( {logout} ) {
                 <div className="col-md-3 p-2 align-items-center">
                     <div className="row mb-3">
                         <Button variant="dark" 
-                                className="col-10 mt-5 mx-auto"
+                                className="col-8 mt-5 mx-auto"
                                 onClick={addArtist}>Add an artist</Button>
                     </div>
                     <div className="row mb-3">
                         <Button variant="dark" href={`/events/${currUser.id}`}
-                                className="col-10 mx-auto">
+                                className="col-8 mx-auto">
                             My Saved Events
                         </Button>
                     </div>
                     <div className="row mb-3 mt-5">
                         <Button variant="dark" href={`/profile/${currUser.id}`}
-                                className="col-10 mx-auto">
+                                className="col-8 mx-auto">
                             Change my settings
                         </Button>
                     </div>
                     <div className="row mb-3">
                         <Button variant="outline-dark" 
                                 onClick={handleLogout} 
-                                className="col-10 mx-auto ">
+                                className="col-8 mx-auto ">
                             Log out
                         </Button>
                     </div>    

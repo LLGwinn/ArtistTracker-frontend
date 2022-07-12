@@ -123,8 +123,8 @@ function Profile( {removeArtist, logout} ) {
                 <Form className="Profile-form col p-4 border border-dark" autoComplete='off'>
                     <h3 className="mb-4">User Info</h3>
                     <Form.Group as={Row} className="mb-3" controlId="username">
-                        <Form.Label column sm={4}>Username</Form.Label>
-                        <Col sm={8}>
+                        <Form.Label column md={4} className="text-md-end">Username</Form.Label>
+                        <Col md={8}>
                             <Form.Control type="text"
                                         name="username" 
                                         value={formData.username}
@@ -132,8 +132,8 @@ function Profile( {removeArtist, logout} ) {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="password">
-                        <Form.Label column sm={4}>Password</Form.Label>
-                        <Col sm={8}>
+                        <Form.Label column md={4} className="text-md-end">Password</Form.Label>
+                        <Col md={8}>
                             <Form.Control type="password"
                                         name="password" 
                                         autoComplete='off'
@@ -141,9 +141,9 @@ function Profile( {removeArtist, logout} ) {
                                         onChange={handleChange} />
                         </Col>
                     </Form.Group>
-                    <Form.Group as={Row} className="mb-3" controlId="firstName">
-                        <Form.Label column sm={4}>First Name</Form.Label>
-                        <Col sm={8}>
+                    <Form.Group as={Row} className="mb-3 align-items-center" controlId="firstName">
+                        <Form.Label column md={4} className="text-md-end">First Name</Form.Label>
+                        <Col md={8}>
                             <Form.Control type="text"
                                         name="firstName" 
                                         value={formData.firstName}
@@ -151,8 +151,8 @@ function Profile( {removeArtist, logout} ) {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3" controlId="email">
-                        <Form.Label column sm={4}>Email</Form.Label>
-                        <Col sm={8}>
+                        <Form.Label column md={4} className="text-md-end">Email</Form.Label>
+                        <Col md={8}>
                             <Form.Control type="email"
                                         name="email" 
                                         value={formData.email}
@@ -160,8 +160,8 @@ function Profile( {removeArtist, logout} ) {
                         </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3">
-                            <Form.Label column sm={4}>City:</Form.Label>
-                            <Col sm={8}>
+                            <Form.Label column md={4} className="text-md-end">City</Form.Label>
+                            <Col md={8}>
                                 <Form.Control id='citySearch' 
                                             type='text' 
                                             name='selectedCity' 
@@ -170,7 +170,7 @@ function Profile( {removeArtist, logout} ) {
                                             value={citySearch}
                                             className='citySearch'/>
                                 {cityOptionsDisplay && (
-                                    <div className='GuestForm-autocompleteContainer ps-3 mt-1'>
+                                    <div className='autocompleteContainer px-2 mt-1'>
                                         {autocompleteCities.length
                                         ?
                                         autocompleteCities.map(city => {
@@ -190,8 +190,8 @@ function Profile( {removeArtist, logout} ) {
                             </Col>
                     </Form.Group>
                     <Form.Group as={Row} className="mb-3 align-items-center" controlId="distancePref">
-                        <Form.Label column sm={4}>Event search radius (miles)</Form.Label>
-                        <Col sm={8}>
+                        <Form.Label column md={4} className="text-md-end">Event search radius (miles)</Form.Label>
+                        <Col md={8}>
                             <Form.Control type="number"
                                         name="radius" 
                                         value={formData.radius ?? ""}

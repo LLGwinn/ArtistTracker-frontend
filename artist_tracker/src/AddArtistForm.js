@@ -2,6 +2,7 @@ import React, {useState, useCallback, useContext} from 'react';
 import { useNavigate } from 'react-router-dom';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
 import ArtistTrackerApi from './api';
 import userContext from './userContext';
 import UnauthorizedMessage from "./UnauthorizedMessage";
@@ -64,6 +65,7 @@ function AddArtistForm( {add} ) {
             <Form autoComplete='off'>
                 <Form.Group>
                     <Form.Label>Artist name:</Form.Label>
+                    <Col sm={6} className="mx-auto">
                     <Form.Control id='artistSearch' 
                                   type='text' 
                                   name='selectedArtist' 
@@ -71,9 +73,9 @@ function AddArtistForm( {add} ) {
                                   onChange={artistSearchChange} 
                                   value={artistSearch} 
                                   required
-                                  className='artistSearch mb-3' />
+                                  className='artistSearch mb-1' />
                     {artistOptionsDisplay && (
-                        <div className='AddArtist-autocompleteContainer ps-3 mt-1'>
+                        <div className='AddArtist-autocompleteContainer px-2 mt-1'>
                             {autocompleteArtists.length
                             ?
                             autocompleteArtists.map(artist => {
@@ -90,6 +92,7 @@ function AddArtistForm( {add} ) {
                             }
                         </div>
                     )}
+                    </Col>
                 </Form.Group>
                 <Button variant='dark'
                         className='mt-5'

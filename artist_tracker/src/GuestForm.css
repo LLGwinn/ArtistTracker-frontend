@@ -5,13 +5,13 @@
 
 .GuestForm-autocompleteContainer {
   position: absolute;
-  left: 19%;
+  left:20%;
   text-align: left;
   font-size: smaller;
   font-style: italic;
   background-color: lightgray;
   color: black;
-  width: 20%;
+  width: auto;
   cursor: pointer;
   border-radius: 2px;
 }

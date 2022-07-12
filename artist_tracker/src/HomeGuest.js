@@ -13,15 +13,15 @@ function HomeGuest() {
                 <div className="col-md-8">
                     <GuestForm />
                 </div>
-                <div className="col-6 col-md-4 mx-auto p-4">
+                <div className="col-md-4 mx-auto p-4">
                     <div className="Home-right row mb-3 justify-content-center">
                         <p>Already have an account?</p>
                         <Button className="col-6" variant="dark" href="/login">Log In</Button>
                     </div>
                     <div className="Home-right row mb-3 justify-content-center">
-                        <p>Create an account to save your favorite artists!</p> 
-                        <p>Every time you log in, you'll see a list of their shows near you!</p>
-                        <Button className="col-6" variant="dark" href="/signup">
+                        <p>Create an account to save your favorite artists!<br/> 
+                        Every time you log in, you'll see a list of their shows near you!</p>
+                        <Button className="col-8" variant="dark" href="/signup">
                             Sign me up!
                         </Button>
                     </div>
